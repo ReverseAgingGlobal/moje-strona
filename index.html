@@ -15,7 +15,6 @@
         .social-link { 
             color: #E2E8F0; 
             transition: all 0.3s ease;
-            transform-origin: center;
         }
         .social-link:hover { 
             color: #B91C1C; 
@@ -34,21 +33,24 @@
         .testimonial-card:hover {
             border-color: #B91C1C;
             transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .hidden-section { display: none; }
+        .hidden-section { display: none !important; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
 
-    <!-- NAWIGACJA GŁÓWNA (Zawsze widoczna) -->
+    <!-- NAWIGACJA GŁÓWNA -->
     <nav class="fixed top-0 left-0 w-full bg-slate-50/95 backdrop-blur-sm shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
+                <!-- Logo tekstowe -->
                 <div class="flex-shrink-0 font-bold text-lg tracking-wide text-slate-800 uppercase cursor-pointer" onclick="showSection('home')">
                     Reverse Aging <span class="text-red-700 font-extrabold">Global</span>
                 </div>
                 
+                <!-- Linki -->
                 <div class="hidden md:flex space-x-8">
                     <a href="javascript:void(0)" onclick="showSection('home')" class="text-slate-600 hover:text-red-700 transition duration-300 font-medium">Home</a>
                     <a href="javascript:void(0)" onclick="showSection('testimonials')" class="text-slate-600 hover:text-red-700 transition duration-300 font-medium">Testimonials</a>
@@ -60,17 +62,23 @@
         </div>
     </nav>
 
-    <!-- SECTION: HOME (Oryginalna strona główna) -->
+    <!-- CAŁA SEKCJA HOME (Wszystko co ma zniknąć po kliknięciu w Testimonials) -->
     <div id="home-section" class="flex-grow flex flex-col">
         <main class="hero-bg flex-grow flex items-center justify-center px-4 pt-32 pb-20">
             <div class="max-w-2xl text-center">
+                <!-- Logo obrazkowe -->
                 <img src="logo.png" alt="Reverse Aging Global Logo" class="mx-auto w-40 mb-8">
+                
+                <!-- Napis i Bio -->
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-800">
                     Reverse Aging <span class="text-red-700">Global</span>
                 </h1>
+                
                 <p class="text-lg md:text-xl text-slate-600 mb-10 font-light leading-relaxed">
                     Healthy habits, longevity science and natural stem-cell extract support to boost regeneration, restore vitality and help you feel younger every day.
                 </p>
+
+                <!-- Button -->
                 <a href="mailto:reverseagingglobal@gmail.com" 
                    class="inline-block bg-red-700 hover:bg-red-800 text-white px-12 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-red-900/40">
                     Contact Us
@@ -79,22 +87,23 @@
         </main>
     </div>
 
-    <!-- SECTION: TESTIMONIALS (Podstrona) -->
+    <!-- SEKCJA TESTIMONIALS (Pojawia się od razu pod belką) -->
     <div id="testimonials-section" class="hidden-section flex-grow pt-16">
-        <!-- Nagłówek zaraz pod belką -->
-        <div class="bg-white border-b border-slate-200 py-10">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-extrabold text-slate-800 text-center uppercase tracking-tight">Testimonials</h2>
+        <!-- Nagłówek -->
+        <div class="bg-white border-b border-slate-200 py-12">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-extrabold text-slate-800 uppercase tracking-tight">Testimonials</h2>
                 <div class="w-20 h-1 bg-red-700 mx-auto mt-4"></div>
             </div>
         </div>
 
+        <!-- Grid z opiniami -->
         <div class="max-w-[1500px] mx-auto px-4 py-12">
-            <!-- Grid: 4-5 w rzędzie -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 
+                <!-- Opinie (pełna treść) -->
                 <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"I’m 70 years old and since wearing Purtier Placenta pills I have more energy, and I’ve stopped taking over the counter pain medicine."</p>
+                    <p class="text-slate-600 italic text-sm mb-4">"I’m 70 years old and since wearing Purtier Placenta pills I have more energy, and I’ve stopped taking over the counter pain medicine (I used to take it once a day)."</p>
                     <span class="font-bold text-red-700 text-xs">— Mike</span>
                 </div>
 
@@ -109,17 +118,17 @@
                 </div>
 
                 <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"I don’t feel any pain in my left hip. When I walk, I can stand up straight. I’m just praising God for the healing."</p>
+                    <p class="text-slate-600 italic text-sm mb-4">"I don’t feel any pain in my left hip. When I walk, I can stand up straight from my waist to my shoulders. Czuję się o kilka lat młodsza."</p>
                     <span class="font-bold text-red-700 text-xs">— Coraleen</span>
                 </div>
 
                 <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"My two-year hip pain had me in tears. Już po 2 tygodniach mogłam climbed the stairs kilka razy dziennie bez bólu. Still no pain!"</p>
+                    <p class="text-slate-600 italic text-sm mb-4">"My two-year hip pain had me in tears. Już po 2 tygodniach mogłam climbed the stairs kilka razy dziennie bez bólu. I am in shock!"</p>
                     <span class="font-bold text-red-700 text-xs">— Dawn</span>
                 </div>
 
                 <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"I just wanted to say that I have worked Purtier into my daily routine a week ago and I literally have so much energy."</p>
+                    <p class="text-slate-600 italic text-sm mb-4">"I just wanted to say that I have worked Purtier into my daily routine a week ago and I literally have so much energy like it's absolutely wild."</p>
                     <span class="font-bold text-red-700 text-xs">— Kitty</span>
                 </div>
 
@@ -129,12 +138,12 @@
                 </div>
 
                 <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"At 55, I thought constant fatigue and stiff joints were just part of getting old. My recovery time after exercise has halved."</p>
+                    <p class="text-slate-600 italic text-sm mb-4">"At 55, I thought constant fatigue and stiff joints were just part of getting old. Purtier proved me wrong. My recovery time has halved."</p>
                     <span class="font-bold text-red-700 text-xs">— David</span>
                 </div>
 
                 <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"After undergoing aggressive chemotherapy, my body felt completely depleted. Since starting Purtier Placenta, my recovery has accelerated."</p>
+                    <p class="text-slate-600 italic text-sm mb-4">"After aggressive chemotherapy, my body felt completely depleted. Since starting Purtier Placenta, my recovery has accelerated."</p>
                     <span class="font-bold text-red-700 text-xs">— Elena</span>
                 </div>
 
@@ -144,12 +153,12 @@
                 </div>
 
                 <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"Integrating Purtier into my rehab after a serious car accident was the best decision. I feel younger and more flexible."</p>
+                    <p class="text-slate-600 italic text-sm mb-4">"Integrating Purtier into my rehab after a serious car accident was the best decision. I feel younger, more flexible and optimistic."</p>
                     <span class="font-bold text-red-700 text-xs">— Marcus</span>
                 </div>
 
                 <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"Chemotherapy took a heavy toll. Purtier has been a cornerstone of my wellness. My hair is coming back thicker."</p>
+                    <p class="text-slate-600 italic text-sm mb-4">"Chemotherapy took a heavy toll. Purtier has been a cornerstone of my wellness. My hair is coming back thicker and fatigue is gone."</p>
                     <span class="font-bold text-red-700 text-xs">— Beatrice</span>
                 </div>
 
@@ -173,13 +182,13 @@
                 <a href="https://tiktok.com" target="_blank" class="social-link"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.43-1.58 2.41-.14 1.14.33 2.34 1.27 3.01.91.64 2.12.8 3.14.39 1.05-.34 1.87-1.31 2.05-2.41.06-1.02.01-2.04.01-3.06V.02z"/></svg></a>
             </div>
             <div class="space-y-4 mb-10">
-                <a href="https://linktr.ee" target="_blank" class="block text-red-500 hover:text-red-400 font-medium transition-colors">Visit our Linktree</a>
                 <p class="text-slate-300 text-sm">reverseagingglobal@gmail.com</p>
             </div>
             <p class="text-slate-400 text-xs mt-8">&copy; 2025 Reverse Aging Global. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- SKRYPT PRZEŁĄCZANIA -->
     <script>
         function showSection(sectionId) {
             const home = document.getElementById('home-section');
@@ -188,11 +197,11 @@
             if (sectionId === 'home') {
                 home.classList.remove('hidden-section');
                 testimonials.classList.add('hidden-section');
-            } else {
+            } else if (sectionId === 'testimonials') {
                 home.classList.add('hidden-section');
                 testimonials.classList.remove('hidden-section');
             }
-            window.scrollTo(0, 0);
+            window.scrollTo(0, 0); // Zawsze przewijaj na górę po zmianie
         }
     </script>
 </body>
