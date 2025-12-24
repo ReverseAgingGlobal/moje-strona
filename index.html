@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reverse Aging Global | Longevity Science</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Czcionka Inter i Ikony FontAwesome -->
     <link href="fonts.googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="cdnjs.cloudflare.com">
     
@@ -17,26 +16,16 @@
             background-size: cover;
             background-position: center;
         }
-        .social-icon { @apply text-slate-400 hover:text-cyan-400 transition-colors text-xl; }
+        .social-icon { @apply text-slate-400 hover:text-cyan-400 transition-all text-2xl hover:scale-110; }
     </style>
 </head>
 <body class="bg-slate-900 text-white min-h-screen flex flex-col">
 
-    <!-- NAV BAR -->
-    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="font-bold text-xl tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
-                REVERSE AGING GLOBAL
-            </div>
-            
-            <!-- Social Icons Top Right -->
-            <div class="hidden md:flex items-center space-x-5">
-                <a href="https://x.com/ReverseAgingGlo" target="_blank" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://t.me/ReverseAgingGlobal" target="_blank" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
-                <a href="https://www.facebook.com/ReverseAgingGlobal" target="_blank" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/reverseagingglobal/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@ReverseAgingGlobal" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@reverseagingglobal" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+    <!-- SIMPLE NAV BAR -->
+    <nav class="fixed w-full z-50 bg-slate-900/50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-bold text-lg tracking-[0.2em] text-slate-200">
+                REVERSE AGING <span class="text-cyan-500">GLOBAL</span>
             </div>
         </div>
     </nav>
@@ -56,34 +45,44 @@
                 Healthy habits, longevity science and natural stem-cell extract support to boost regeneration, restore vitality and help you feel younger every day.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="mailto:reverseagingglobal@gmail.com" 
-                   class="w-full sm:w-auto bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-cyan-900/40">
-                    Contact Us
-                </a>
-                <a href="https://linktr.ee/ReverseAgingGlobal" target="_blank"
-                   class="w-full sm:w-auto border border-slate-700 hover:bg-slate-800 text-white px-10 py-4 rounded-full font-bold transition-all">
-                    Linktree <i class="fa-solid fa-link ml-2 text-sm"></i>
-                </a>
-            </div>
+            <a href="mailto:reverseagingglobal@gmail.com" 
+               class="inline-block bg-cyan-600 hover:bg-cyan-500 text-white px-12 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-cyan-900/40">
+                Contact Us
+            </a>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="py-12 bg-slate-950 text-center border-t border-slate-800">
+    <!-- FOOTER WITH ALL SOCIALS -->
+    <footer class="py-16 bg-slate-950 text-center border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4">
-            <!-- Socials in Footer -->
-            <div class="flex justify-center space-x-8 mb-8">
-                <a href="https://x.com/ReverseAgingGlo" target="_blank" class="social-icon text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://t.me/ReverseAgingGlobal" target="_blank" class="social-icon text-2xl"><i class="fa-brands fa-telegram"></i></a>
-                <a href="https://www.youtube.com/@ReverseAgingGlobal" target="_blank" class="social-icon text-2xl"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.instagram.com/reverseagingglobal/" target="_blank" class="social-icon text-2xl"><i class="fa-brands fa-instagram"></i></a>
+            
+            <h3 class="text-slate-400 uppercase tracking-widest text-sm mb-8 font-semibold">Connect with us</h3>
+            
+            <!-- Social Icons Grid -->
+            <div class="flex flex-wrap justify-center gap-8 mb-12">
+                <a href="x.com" target="_blank" title="X (Twitter)" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="t.me" target="_blank" title="Telegram" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+                <a href="www.youtube.com" target="_blank" title="YouTube" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                <a href="www.instagram.com" target="_blank" title="Instagram" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="www.facebook.com" target="_blank" title="Facebook" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="www.tiktok.com" target="_blank" title="TikTok" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+
+            <!-- Additional Links -->
+            <div class="space-y-4 mb-10">
+                <a href="linktr.ee" target="_blank" class="block text-cyan-500 hover:text-cyan-400 font-medium transition-colors">
+                    <i class="fa-solid fa-link mr-2"></i> Visit our Linktree
+                </a>
+                <p class="text-slate-300">
+                    <i class="fa-regular fa-envelope mr-2 text-cyan-600"></i> reverseagingglobal@gmail.com
+                </p>
             </div>
             
-            <p class="text-slate-500 mb-2 font-medium">reverseagingglobal@gmail.com</p>
-            <p class="text-slate-600 text-sm">
-                &copy; 2025 Reverse Aging Global. All Rights Reserved.
-            </p>
+            <div class="pt-8 border-t border-slate-900">
+                <p class="text-slate-600 text-sm">
+                    &copy; 2025 Reverse Aging Global. All Rights Reserved.
+                </p>
+            </div>
         </div>
     </footer>
 
