@@ -35,7 +35,7 @@
                 </div>
             </div>
             
-            <!-- Centered Bold Links (Powiększona czcionka) -->
+            <!-- Desktop Menu (Widoczne na komputerach) -->
             <div class="hidden md:flex flex-grow justify-center space-x-10">
                 <a href="javascript:void(0)" onclick="showSection('home')" class="text-slate-700 hover:text-red-700 transition duration-300 font-extrabold uppercase text-base tracking-widest">Home</a>
                 <a href="javascript:void(0)" onclick="showSection('testimonials')" class="text-slate-700 hover:text-red-700 transition duration-300 font-extrabold uppercase text-base tracking-widest">Testimonials</a>
@@ -43,6 +43,26 @@
                 <a href="javascript:void(0)" onclick="showSection('buy')" class="text-slate-700 hover:text-red-700 transition duration-300 font-extrabold uppercase text-base tracking-widest">Buy</a>
                 <a href="javascript:void(0)" onclick="showSection('contact')" class="text-slate-700 hover:text-red-700 transition duration-300 font-extrabold uppercase text-base tracking-widest">Contact Us</a>
             </div>
+
+            <!-- Przycisk hamburgera (Widoczny tylko na telefonach) -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-slate-700 hover:text-red-700 focus:outline-none">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Mobilne (Rozwijane na telefonie) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-50 border-t border-slate-200 shadow-inner">
+        <div class="px-4 py-4 space-y-2">
+            <a href="javascript:void(0)" onclick="showSection('home')" class="mobile-link block py-3 px-4 font-extrabold text-slate-700 hover:bg-slate-100 hover:text-red-700 uppercase tracking-widest transition">Home</a>
+            <a href="javascript:void(0)" onclick="showSection('testimonials')" class="mobile-link block py-3 px-4 font-extrabold text-slate-700 hover:bg-slate-100 hover:text-red-700 uppercase tracking-widest transition">Testimonials</a>
+            <a href="javascript:void(0)" onclick="showSection('education')" class="mobile-link block py-3 px-4 font-extrabold text-slate-700 hover:bg-slate-100 hover:text-red-700 uppercase tracking-widest transition">Education</a>
+            <a href="javascript:void(0)" onclick="showSection('buy')" class="mobile-link block py-3 px-4 font-extrabold text-slate-700 hover:bg-slate-100 hover:text-red-700 uppercase tracking-widest transition">Buy</a>
+            <a href="javascript:void(0)" onclick="showSection('contact')" class="mobile-link block py-3 px-4 font-extrabold text-slate-700 hover:bg-slate-100 hover:text-red-700 uppercase tracking-widest transition">Contact Us</a>
         </div>
     </div>
 </nav>
@@ -383,13 +403,47 @@
         </div>
     </footer>
 
+    <!-- SCRIPT SECTION -->
     <script>
+        // Funkcja przełączania sekcji (Twoja istniejąca)
         function showSection(id) {
             const sections = ['home', 'testimonials', 'education', 'buy', 'contact'];
-            sections.forEach(s => document.getElementById(s + '-section').classList.add('hidden-section'));
-            document.getElementById(id + '-section').classList.remove('hidden-section');
+            sections.forEach(s => {
+                const sectionElement = document.getElementById(s + '-section');
+                if (sectionElement) {
+                    sectionElement.classList.add('hidden-section');
+                }
+            });
+            
+            const targetSection = document.getElementById(id + '-section');
+            if (targetSection) {
+                targetSection.classList.remove('hidden-section');
+            }
             window.scrollTo(0, 0);
         }
+
+        // Obsługa menu hamburgerowego (Nowa)
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            // Otwieranie/Zamykanie menu po kliknięciu w ikonę
+            if (btn && menu) {
+                btn.addEventListener('click', function() {
+                    menu.classList.toggle('hidden');
+                });
+            }
+
+            // Automatyczne zamykanie menu po kliknięciu w dowolny link
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (menu) {
+                        menu.classList.add('hidden');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
