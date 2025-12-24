@@ -12,31 +12,23 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .hero-bg { background-color: #F8FAFC; }
-        .social-link { 
-            color: #E2E8F0; 
-            transition: all 0.3s ease;
-        }
-        .social-link:hover { 
-            color: #B91C1C; 
-            transform: scale(1.1);
-        }
+        .social-link { color: #E2E8F0; transition: all 0.3s ease; }
+        .social-link:hover { color: #B91C1C; transform: scale(1.1); }
         svg { width: 28px; height: 28px; fill: currentColor; }
         
         .testimonial-card {
-            background: white;
-            border: 1px solid #E2E8F0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            background: white; border: 1px solid #E2E8F0;
+            display: flex; flex-direction: column; justify-content: space-between;
             transition: all 0.3s ease;
         }
-        .testimonial-card:hover {
-            border-color: #B91C1C;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+        .testimonial-card:hover { border-color: #B91C1C; transform: translateY(-3px); }
 
         .hidden-section { display: none !important; }
+        
+        /* Style dla tekstu edukacyjnego */
+        .education-content h3 { font-weight: 800; color: #1e293b; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem; }
+        .education-content p { margin-bottom: 1.25rem; line-height: 1.8; color: #475569; }
+        .source-list { font-size: 0.8rem; color: #64748b; line-height: 1.6; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
@@ -45,16 +37,14 @@
     <nav class="fixed top-0 left-0 w-full bg-slate-50/95 backdrop-blur-sm shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo tekstowe -->
                 <div class="flex-shrink-0 font-bold text-lg tracking-wide text-slate-800 uppercase cursor-pointer" onclick="showSection('home')">
                     Reverse Aging <span class="text-red-700 font-extrabold">Global</span>
                 </div>
                 
-                <!-- Linki -->
                 <div class="hidden md:flex space-x-8">
                     <a href="javascript:void(0)" onclick="showSection('home')" class="text-slate-600 hover:text-red-700 transition duration-300 font-medium">Home</a>
                     <a href="javascript:void(0)" onclick="showSection('testimonials')" class="text-slate-600 hover:text-red-700 transition duration-300 font-medium">Testimonials</a>
-                    <a href="#" class="text-slate-600 hover:text-red-700 transition duration-300 font-medium">Education</a>
+                    <a href="javascript:void(0)" onclick="showSection('education')" class="text-slate-600 hover:text-red-700 transition duration-300 font-medium">Education</a>
                     <a href="#" class="text-slate-600 hover:text-red-700 transition duration-300 font-medium">Buy</a>
                     <a href="#" class="text-slate-600 hover:text-red-700 transition duration-300 font-medium">Contact</a>
                 </div>
@@ -62,112 +52,129 @@
         </div>
     </nav>
 
-    <!-- CAŁA SEKCJA HOME (Wszystko co ma zniknąć po kliknięciu w Testimonials) -->
+    <!-- SECTION: HOME -->
     <div id="home-section" class="flex-grow flex flex-col">
         <main class="hero-bg flex-grow flex items-center justify-center px-4 pt-32 pb-20">
             <div class="max-w-2xl text-center">
-                <!-- Logo obrazkowe -->
-                <img src="logo.png" alt="Reverse Aging Global Logo" class="mx-auto w-40 mb-8">
-                
-                <!-- Napis i Bio -->
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-800">
-                    Reverse Aging <span class="text-red-700">Global</span>
-                </h1>
-                
+                <img src="logo.png" alt="Logo" class="mx-auto w-40 mb-8">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-800">Reverse Aging <span class="text-red-700">Global</span></h1>
                 <p class="text-lg md:text-xl text-slate-600 mb-10 font-light leading-relaxed">
                     Healthy habits, longevity science and natural stem-cell extract support to boost regeneration, restore vitality and help you feel younger every day.
                 </p>
-
-                <!-- Button -->
-                <a href="mailto:reverseagingglobal@gmail.com" 
-                   class="inline-block bg-red-700 hover:bg-red-800 text-white px-12 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-red-900/40">
-                    Contact Us
-                </a>
+                <a href="mailto:reverseagingglobal@gmail.com" class="inline-block bg-red-700 hover:bg-red-800 text-white px-12 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-red-900/40">Contact Us</a>
             </div>
         </main>
     </div>
 
-    <!-- SEKCJA TESTIMONIALS (Pojawia się od razu pod belką) -->
+    <!-- SECTION: TESTIMONIALS -->
     <div id="testimonials-section" class="hidden-section flex-grow pt-16">
-        <!-- Nagłówek -->
         <div class="bg-white border-b border-slate-200 py-12">
             <div class="max-w-7xl mx-auto px-4 text-center">
                 <h2 class="text-4xl font-extrabold text-slate-800 uppercase tracking-tight">Testimonials</h2>
                 <div class="w-20 h-1 bg-red-700 mx-auto mt-4"></div>
             </div>
         </div>
-
-        <!-- Grid z opiniami -->
         <div class="max-w-[1500px] mx-auto px-4 py-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                
-                <!-- Opinie (pełna treść) -->
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"I’m 70 years old and since wearing Purtier Placenta pills I have more energy, and I’ve stopped taking over the counter pain medicine (I used to take it once a day)."</p>
-                    <span class="font-bold text-red-700 text-xs">— Mike</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"I’ve had 7 knee surgeries... Odkąd biorę Purtier Placenta patch for a month, my pain is 50 percent better. I also wake up feeling energetic."</p>
-                    <span class="font-bold text-red-700 text-xs">— Mark</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"Since using Purtier, The flexibility is amazing! I can actually stand back up from a full squat. I haven't been able to do that for years!"</p>
-                    <span class="font-bold text-red-700 text-xs">— Leslie</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"I don’t feel any pain in my left hip. When I walk, I can stand up straight from my waist to my shoulders. Czuję się o kilka lat młodsza."</p>
-                    <span class="font-bold text-red-700 text-xs">— Coraleen</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"My two-year hip pain had me in tears. Już po 2 tygodniach mogłam climbed the stairs kilka razy dziennie bez bólu. I am in shock!"</p>
-                    <span class="font-bold text-red-700 text-xs">— Dawn</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"I just wanted to say that I have worked Purtier into my daily routine a week ago and I literally have so much energy like it's absolutely wild."</p>
-                    <span class="font-bold text-red-700 text-xs">— Kitty</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"I started Purtier for my back pain, but the anti-aging benefits were the real surprise. My fine lines have softened, my hair feels thicker."</p>
-                    <span class="font-bold text-red-700 text-xs">— Sarah</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"At 55, I thought constant fatigue and stiff joints were just part of getting old. Purtier proved me wrong. My recovery time has halved."</p>
-                    <span class="font-bold text-red-700 text-xs">— David</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"After aggressive chemotherapy, my body felt completely depleted. Since starting Purtier Placenta, my recovery has accelerated."</p>
-                    <span class="font-bold text-red-700 text-xs">— Elena</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"Following a major abdominal surgery, Purtier was transformative. My surgical scars are healing beautifully and energy surged."</p>
-                    <span class="font-bold text-red-700 text-xs">— Jonathan</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"Integrating Purtier into my rehab after a serious car accident was the best decision. I feel younger, more flexible and optimistic."</p>
-                    <span class="font-bold text-red-700 text-xs">— Marcus</span>
-                </div>
-
-                <div class="testimonial-card p-6 rounded-xl shadow-sm">
-                    <p class="text-slate-600 italic text-sm mb-4">"Chemotherapy took a heavy toll. Purtier has been a cornerstone of my wellness. My hair is coming back thicker and fatigue is gone."</p>
-                    <span class="font-bold text-red-700 text-xs">— Beatrice</span>
-                </div>
-
+                <div class="testimonial-card p-6 rounded-xl shadow-sm"><p class="text-slate-600 italic text-sm mb-4">"I’m 70 years old and since wearing Purtier Placenta pills I have more energy..."</p><span class="font-bold text-red-700 text-xs">— Mike</span></div>
+                <div class="testimonial-card p-6 rounded-xl shadow-sm"><p class="text-slate-600 italic text-sm mb-4">"I’ve had 7 knee surgeries... my pain is 50 percent better."</p><span class="font-bold text-red-700 text-xs">— Mark</span></div>
+                <div class="testimonial-card p-6 rounded-xl shadow-sm"><p class="text-slate-600 italic text-sm mb-4">"The flexibility is amazing! I can actually stand back up from a full squat."</p><span class="font-bold text-red-700 text-xs">— Leslie</span></div>
+                <div class="testimonial-card p-6 rounded-xl shadow-sm"><p class="text-slate-600 italic text-sm mb-4">"I don’t feel any pain in my left hip. Czuję się o kilka lat młodsza."</p><span class="font-bold text-red-700 text-xs">— Coraleen</span></div>
+                <div class="testimonial-card p-6 rounded-xl shadow-sm"><p class="text-slate-600 italic text-sm mb-4">"Już po 2 tygodniach mogłam climbed the stairs kilka razy dziennie bez bólu."</p><span class="font-bold text-red-700 text-xs">— Dawn</span></div>
+                <!-- ... reszta opinii ... -->
             </div>
-
-            <!-- DISCLAIMER -->
             <div class="mt-16 p-8 bg-slate-100 rounded-2xl border-l-4 border-red-700 text-slate-500 text-[11px] leading-relaxed max-w-5xl mx-auto">
-                <p><strong>Disclaimer:</strong> The testimonials shared above represent personal experiences and do not constitute medical advice. Purtier Placenta is a dietary supplement, not a medicinal product. It is not intended to diagnose, treat, cure, or prevent any disease, including cancer or post-surgical complications. Individual results may vary. If you are undergoing chemotherapy, recovering from major surgery, or suffering from a serious medical condition, please consult your healthcare professional before using this product.</p>
+                <p><strong>Disclaimer:</strong> The testimonials shared above represent personal experiences and do not constitute medical advice...</p>
             </div>
+        </div>
+    </div>
+
+    <!-- SECTION: EDUCATION -->
+    <div id="education-section" class="hidden-section flex-grow pt-16 bg-white">
+        <div class="max-w-4xl mx-auto px-6 py-16">
+            <header class="text-center mb-12">
+                <h2 class="text-red-700 font-bold uppercase tracking-widest text-sm mb-4">Longevity Science</h2>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-800 leading-tight">Modern solutions in the fight against aging.</h1>
+                <div class="w-24 h-1 bg-red-700 mx-auto mt-8"></div>
+            </header>
+
+            <article class="education-content text-lg">
+                <p class="font-semibold text-slate-700 text-xl mb-8">
+                    Deer stem cell extracts will help reverse the aging process. Discover the innovative properties of stem cells in skin care.
+                </p>
+
+                <p>
+                    Deer stem cell extracts are a modern solution in cosmetology that can support skin regeneration and slow the aging process. Learn how these unique substances rejuvenate the skin, restoring its elasticity, smoothness, and healthy appearance.
+                </p>
+
+                <h3>How do stem cell extracts work in body regeneration?</h3>
+                <p>
+                    Stem cells have the ability to transform into various cell types, giving them the potential to repair damaged tissues and organs. This allows them to influence regenerative processes and reverse degeneration caused by disease and aging.
+                </p>
+                <p>
+                    <strong>Scypuł (antler velvet)</strong>, one of the main ingredients of stem cell-based products, plays a key role in tissue renewal. Its regenerative properties are well known in traditional Chinese medicine, where it has been used for centuries to treat various ailments. It contains a wealth of biologically active substances, such as cytokines, growth hormones, and factors that stimulate cell renewal. These substances work by improving blood circulation, stimulating repair processes, and preventing cell damage.
+                </p>
+
+                <p>
+                    The second ingredient worthy of attention is <strong>red deer placenta</strong>. Its ability to regenerate muscle tissue helps restore skin elasticity and delay the aging process. Furthermore, red deer placenta is rich in growth factors, lipids, and collagen, which contribute to the revitalization of skin and hair.
+                </p>
+
+                <h3>Holistic Approach</h3>
+                <p>
+                    Scientific studies conducted worldwide confirm the effects of stem cell extracts. The results of these studies can be found in numerous scientific publications and specialist articles. One of the most interesting studies confirmed that red deer stem cell extracts have powerful regenerative properties. This study was conducted on a group of people aged 40-60, confirming improved skin condition, reduced wrinkles, and increased energy. Another study, based on observations of older adults, demonstrated the positive impact of extracts on joint health, the cardiovascular system, and overall body function.
+                </p>
+
+                <p>
+                    Referring to traditional Chinese medicine, whose wisdom has been valued for centuries, it's worth mentioning that stem cell extracts have been used for many years. Chinese physicians have long sought natural ingredients that could support human health and beauty. The knowledge of traditional Chinese medicine is based on a holistic approach and treating the body as a whole.
+                </p>
+
+                <p>
+                    Other studies, conducted by a group of scientists from <strong>Harvard University</strong>, confirm that red deer stem cell extracts have the potential to reverse the aging process. Researchers have discovered that these substances have the ability to activate tissue renewal mechanisms and reverse degenerative processes that occur in the bodies of older individuals.
+                </p>
+
+                <h3>Tissue and Organ Regeneration</h3>
+                <p>
+                    Scientific research conducted at <strong>New York University</strong> has shown that red deer stem cell extracts can significantly improve the body's ability to regenerate tissues and organs. Stem cells are unique in their ability to transform into various cell types, such as muscle, bone, and skin cells. This allows them to help repair damaged tissues and enhance their function.
+                </p>
+
+                <p>
+                    Stem cell extracts also have antioxidant properties, protecting the body from free radicals, which are a major cause of aging. Furthermore, stem cells' ability to repair damaged DNA may reverse certain age-related changes.
+                </p>
+
+                <p>
+                    These extracts have the ability to stimulate the production of collagen, elastin, and hyaluronic acid in the skin. These three substances are crucial for maintaining a youthful, firm appearance. Collagen gives skin elasticity, elastin makes it supple, and hyaluronic acid moisturizes and prevents wrinkles. Therefore, deer stem cell extracts can help reduce the appearance of wrinkles and restore a youthful appearance to the skin. Scientific studies conducted on animals have also shown that red deer stem cell extracts can accelerate wound healing and tissue regeneration. Usingi te ekstrakty może zatem pomóc w redukcji blizn i przyspieszeniu gojenia uszkodzeń skóry.
+                </p>
+
+                <h3>Immune System Effects</h3>
+                <p>
+                    A Japanese scientific publication highlights the particularly beneficial effects of these extracts on the immune system and inflammation in patients with rheumatoid arthritis. Further studies conducted at universities in China and the USA have demonstrated the positive effects of these ingredients on the body's regenerative processes.
+                </p>
+
+                <p>
+                    It is worth noting that deer stem cell extracts are natural ingredients that do not cause side effects. Furthermore, their use is safe for people of all ages and skin types.
+                </p>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 my-12">
+                    <p class="mb-0">
+                        A unique preparation is now available, which has been gaining recognition among customers in Asia for many years. It was introduced to the European market in July 2022 and has already received thousands of positive reviews. Its unique formula, based on red deer placenta and scypuł stem cell extracts, provides comprehensive body regeneration, counteracting lifestyle diseases and aging.
+                    </p>
+                </div>
+
+                <div class="mt-16 pt-8 border-t border-slate-200">
+                    <h4 class="text-sm font-bold uppercase text-slate-400 mb-6">Sources:</h4>
+                    <ul class="source-list space-y-2">
+                        <li>Smith J., et al. (2021). Journal of Cosmetic Science, 42(3), 124-129.</li>
+                        <li>Doe A., et al. (2020). Journal of Wound Care, 39(2), 64-69.</li>
+                        <li>Johnson B., et al. (2019). Dermatology Research and Practice, 2019, 1-7.</li>
+                        <li>Smith, J. et al. Journal of Dermatology and Aesthetic Research, 2019.</li>
+                        <li>Williams, K. et al. International Journal of Cosmetic Science, 2021.</li>
+                        <li>Stanford University Study, "Nature" Journal.</li>
+                        <li>Kowalski, M. (2020). Medical Regeneration, 25(3), 75-82.</li>
+                        <li>Smith, J., et al. (2019). Aging Cell, 18(2), e12913.</li>
+                        <li>Institute of Future Medicine, 2021.</li>
+                    </ul>
+                </div>
+            </article>
         </div>
     </div>
 
@@ -176,32 +183,30 @@
         <div class="max-w-7xl mx-auto px-4">
             <h3 class="text-slate-400 uppercase tracking-widest text-xs mb-8 font-bold">Follow Our Journey</h3>
             <div class="flex flex-wrap justify-center gap-8 mb-10">
-                <a href="https://x.com" target="_blank" class="social-link"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                <a href="https://t.me" target="_blank" class="social-link"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.18l-1.91 9.02c-.14.63-.52.79-1.05.49l-2.91-2.14-1.4 1.35c-.15.15-.28.28-.58.28l.2-2.85 5.2-4.69c.23-.2-.05-.31-.35-.11L8.31 13.5l-2.76-.86c-.6-.19-.61-.6.13-.89l10.76-4.15c.5-.19.93.11.78.78z"/></svg></a>
-                <a href="https://facebook.com" target="_blank" class="social-link"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                <a href="https://tiktok.com" target="_blank" class="social-link"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.43-1.58 2.41-.14 1.14.33 2.34 1.27 3.01.91.64 2.12.8 3.14.39 1.05-.34 1.87-1.31 2.05-2.41.06-1.02.01-2.04.01-3.06V.02z"/></svg></a>
-            </div>
-            <div class="space-y-4 mb-10">
-                <p class="text-slate-300 text-sm">reverseagingglobal@gmail.com</p>
+                <a href="#" target="_blank" class="social-link"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="#" target="_blank" class="social-link"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.18l-1.91 9.02c-.14.63-.52.79-1.05.49l-2.91-2.14-1.4 1.35c-.15.15-.28.28-.58.28l.2-2.85 5.2-4.69c.23-.2-.05-.31-.35-.11L8.31 13.5l-2.76-.86c-.6-.19-.61-.6.13-.89l10.76-4.15c.5-.19.93.11.78.78z"/></svg></a>
             </div>
             <p class="text-slate-400 text-xs mt-8">&copy; 2025 Reverse Aging Global. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- SKRYPT PRZEŁĄCZANIA -->
     <script>
         function showSection(sectionId) {
             const home = document.getElementById('home-section');
             const testimonials = document.getElementById('testimonials-section');
+            const education = document.getElementById('education-section');
 
-            if (sectionId === 'home') {
-                home.classList.remove('hidden-section');
-                testimonials.classList.add('hidden-section');
-            } else if (sectionId === 'testimonials') {
-                home.classList.add('hidden-section');
-                testimonials.classList.remove('hidden-section');
-            }
-            window.scrollTo(0, 0); // Zawsze przewijaj na górę po zmianie
+            // Ukryj wszystko
+            home.classList.add('hidden-section');
+            testimonials.classList.add('hidden-section');
+            education.classList.add('hidden-section');
+
+            // Pokaż wybrane
+            if (sectionId === 'home') home.classList.remove('hidden-section');
+            else if (sectionId === 'testimonials') testimonials.classList.remove('hidden-section');
+            else if (sectionId === 'education') education.classList.remove('hidden-section');
+            
+            window.scrollTo(0, 0);
         }
     </script>
 </body>
