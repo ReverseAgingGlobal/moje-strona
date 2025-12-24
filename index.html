@@ -44,19 +44,32 @@
         </div>
     </nav>
 
-    <!-- SECTION: HOME -->
+        <!-- SECTION: HOME -->
     <div id="home-section" class="flex-grow flex flex-col">
         <main class="hero-bg flex-grow flex items-center justify-center px-4 pt-32 pb-20">
             <div class="max-w-4xl text-center">
+                
+                <!-- Smaller image in a double frame (white & red border) -->
                 <div class="inline-block p-1 bg-white border-2 border-red-700 shadow-xl rounded-lg mb-8">
-                    <img src="reverseaging1.png" alt="Longevity" class="max-w-[320px] w-full h-auto rounded">
+                    <img src="reverseaging1.png" alt="Longevity Science" class="max-w-[320px] w-full h-auto rounded">
                 </div>
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-800 uppercase tracking-tight">Reverse Aging <span class="text-red-700">Global</span></h1>
-                <p class="text-lg text-slate-600 mb-10 font-light leading-relaxed max-w-2xl mx-auto">Healthy habits, longevity science and natural stem-cell extract support to boost regeneration and restore vitality.</p>
-                <button onclick="showSection('contact')" class="bg-red-700 hover:bg-red-800 text-white px-10 py-4 rounded-full font-bold transition-all shadow-lg uppercase tracking-widest text-sm">Contact Us</button>
+                
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-800 uppercase tracking-tight">
+                    Reverse Aging <span class="text-red-700">Global</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-600 mb-10 font-light leading-relaxed max-w-2xl mx-auto">
+                    Healthy habits, longevity science and natural stem-cell extract support to boost regeneration, restore vitality and help you feel younger every day.
+                </p>
+
+                <!-- Button now redirects to Contact section via JS function -->
+                <button onclick="showSection('contact')" class="inline-block bg-red-700 hover:bg-red-800 text-white px-12 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-red-900/40 uppercase tracking-widest text-sm">
+                    Contact Us
+                </button>
             </div>
         </main>
     </div>
+
 
     <!-- SECTION: TESTIMONIALS -->
     <div id="testimonials-section" class="hidden-section flex-grow pt-16">
