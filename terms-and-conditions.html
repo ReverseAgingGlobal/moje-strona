@@ -1,55 +1,48 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions | Full Disclaimer | Reverse Aging Global</title>
+    <title>Reverse Aging Global | Longevity Science</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Zakładam, że używasz Tailwind CSS, bazując na podanych klasach (np. bg-slate-800) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="fonts.googleapis.com" rel="stylesheet">
     <style>
-        /* Prosty CSS dla odstępów i wyglądu */
-        .content-section {
-            padding-top: 40px;
-            padding-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #333;
-        }
-        .content-section h4 {
-            font-weight: bold;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.25rem;
-            color: #1a202c;
-        }
-        .content-section p, .content-section ul {
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        .content-section ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg { background-color: #F8FAFC; }
+        .social-link { color: #E2E8F0; transition: all 0.3s ease; }
+        .social-link:hover { color: #B91C1C; transform: scale(1.1); }
+        svg { width: 24px; height: 24px; fill: currentColor; }
+        .testimonial-card { background: white; border: 1px solid #E2E8F0; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; }
+        .testimonial-card:hover { border-color: #B91C1C; transform: translateY(-3px); }
+        .education-content h3 { font-weight: 800; color: #1e293b; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem; }
+        .education-content p { margin-bottom: 1.25rem; line-height: 1.8; color: #475569; }
+        .hidden-section { display: none !important; }
     </style>
 </head>
-<body class="flex flex-col min-h-screen bg-gray-100">
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
 
-    <!-- NAVIGATION BAR / HEADER (Uproszczony przykład Twojej belki) -->
-    <header class="bg-white shadow-md">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold text-gray-900">
-                Reverse Aging Global
+    <!-- NAVIGATION BAR -->
+<nav class="fixed top-0 left-0 w-full bg-slate-50/95 backdrop-blur-sm shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo & Brand -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="showSection('home')">
+                <img src="logo.png" alt="Logo" class="h-9 w-auto">
+                <div class="font-bold text-lg tracking-wide text-slate-800 uppercase">
+                    Reverse Aging <span class="text-red-700 font-extrabold">Global</span>
+                </div>
             </div>
-            <div class="flex space-x-4">
-    <!-- Linki kierują do strony głównej i przekazują parametr lub po prostu otwierają plik -->
-    <a href="index.html" class="text-gray-600 hover:text-gray-900">Home</a>
-    <a href="index.html" class="text-gray-600 hover:text-gray-900">Testimonials</a>
-    <a href="index.html" class="text-gray-600 hover:text-gray-900">Education</a>
-    <a href="index.html" class="text-gray-600 hover:text-gray-900 font-bold text-red-700">Buy Now</a>
-</div>
-        </nav>
-    </header>
+            
+            <!-- Desktop Menu (Widoczne na komputerach) -->
+            <div class="hidden md:flex flex-grow justify-center space-x-10">
+                <a href="javascript:void(0)" onclick="showSection('home')" class="text-slate-700 hover:text-red-700 transition duration-300 font-extrabold uppercase text-base tracking-widest">Home</a>
+                <a href="javascript:void(0)" onclick="showSection('testimonials')" class="text-slate-700 hover:text-red-700 transition duration-300 font-extrabold uppercase text-base tracking-widest">Testimonials</a>
+                <a href="javascript:void(0)" onclick="showSection('education')" class="text-slate-700 hover:text-red-700 transition duration-300 font-extrabold uppercase text-base tracking-widest">Education</a>
+                <a href="javascript:void(0)" onclick="showSection('buy')" class="text-slate-700 hover:text-red-700 transition duration-300 font-extrabold uppercase text-base tracking-widest">Buy</a>
+                <a href="javascript:void(0)" onclick="showSection('contact')" class="text-slate-700 hover:text-red-700 transition duration-300 font-extrabold uppercase text-base tracking-widest">Contact Us</a>
+            </div>
 
     <!-- MAIN CONTENT - Pełny Disclaimer i T&Cs -->
     <main class="flex-grow">
